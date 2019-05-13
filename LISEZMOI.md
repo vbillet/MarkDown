@@ -1,5 +1,5 @@
 # Script md.php
-Ce script PHP a pour but de permettre le rendu de fichiers MarkDown (.md) en utilisant Apache et PHP.
+Ce script PHP a pour but de permettre le rendu de fichiers MarkDown (.md) en utilisant Apache et PHP. Tant que le script est installé, vous pouvez demander des fichiers .md à votre navigateur, et les voir correctement formatés en HTML. Par exemple : http://www.mywebsite.com/README.md sera affiché au format HTML au lieu du texte plein.
 ## Installation
 Il suffit de copier les fichiers **md.php**, **w3.css**, **hcode.css** et **hcode.js** à la _racine du site_.
 ## Configuration
