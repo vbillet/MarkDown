@@ -1,5 +1,5 @@
 # md.php Script
-[![GitHub version](https://badge.fury.io/gh/vbillet%2FMarkDown.svg)](https://badge.fury.io/gh/vbillet%2FMarkDown)
+[![GitHub version](https://badge.fury.io/gh/vbillet%2FMarkDown.svg)](https://badge.fury.io/gh/vbillet%2FMarkDown)<br/>
 This PHP script aims to render MarkDown (.md) files using Apache and PHP. As long as the script is installed, you can request .md files from your browser, and see them correctly formatted in HTML. For instance : http://www.mywebsite.com/README.md will be displayed in HTML instead of full text.
 
 ## Installation
