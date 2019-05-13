@@ -51,7 +51,7 @@ $Markdown = new Markdown();
 $htmlMarkDown = $Markdown->text("Hello, this is a **MarkDown** string.");
 echo($htmlMarkDown);
 ````
-##References
+## References
 This script is based on the following scripts:
 * [MarkDown Parser in PHP](https://parsedown.org/)
 * [W3Shcool CSS Framework](https://www.w3schools.com/w3css/default.asp)
