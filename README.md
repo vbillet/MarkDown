@@ -1,5 +1,5 @@
 # md.php Script
-This PHP script aims to render MarkDown (.md) files using Apache and PHP.
+This PHP script aims to render MarkDown (.md) files using Apache and PHP. As long as the script is installed, you can request .md files from your browser, and see them correctly formatted in HTML. For instance : http://www.mywebsite.com/README.md will be displayed in HTML instead of full text.
 ## Installation
 Just copy the **md.php**, **w3.css**, **hcode.css** and **hcode.js** files to the root of the site.
 ## Configuration
