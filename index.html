@@ -1,0 +1,51 @@
+<html><head><link rel="stylesheet" href="/w3.css"><link rel="stylesheet" href="/hcode.css"><script src="/hcode.js"></script><script>hljs.initHighlightingOnLoad();</script><title>/MarkDown/README.md</title></head><body class="w3-grey"><div class="w3-content w3-padding w3-white w3-border w3-border-black w3-round"><h1>md.php Script</h1>
+<p>This PHP script aims to render MarkDown (.md) files using Apache and PHP. As long as the script is installed, you can request .md files from your browser, and see them correctly formatted in HTML. For instance : <a href="http://www.mywebsite.com/README.md">http://www.mywebsite.com/README.md</a> will be displayed in HTML instead of full text.</p>
+<h2>Installation</h2>
+<p>Download this script on <a href="https://github.com/vbillet/MarkDown">GitHub.com</a>.
+Just copy the <strong>md.php</strong>, <strong>w3.css</strong>, <strong>hcode.css</strong> and <strong>hcode.js</strong> files to the root of the site.
+Documentation is available on <a href="https://vbillet.github.io/MarkDown/">project's website</a>.</p>
+<h2>Configuration</h2>
+<p>To use this script, add the following lines to the <strong>httpd.conf</strong> file in the <strong>Virtual Host</strong> section:</p>
+<pre><code>RewriteEngine on
+RewriteRule (.*)\.md$ /md.php?f=$1</code></pre>
+<h3>Example :</h3>
+<p>This example shows a localweb configucation complete with URL rewriting enabled for .md files.</p>
+<pre><code class="xml">## Virtualhost localweb
+&lt;VirtualHost 192.168.1.x&gt;
+    DocumentRoot "C:/Work/PHP"
+    ServerName 192.168.1.x
+
+    RewriteEngine on
+    RewriteRule (.*)\.md$ /md.php?f=$1
+
+    &lt;Directory "C:/Work/PHP"&gt;
+        Options FollowSymLinks Indexes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+        Require all granted
+    &lt;/Directory&gt;
+&lt;/VirtualHost&gt;</code></pre>
+<p>For more information on the Rewriting URL with Apache, see : <a href="https://httpd.apache.org/docs/trunk/fr/mod/mod_rewrite.html#rewriterule">Apache WebSite</a>.</p>
+<h2>Using with PHP</h2>
+<p>You can also use <strong>md.php</strong> in your PHP scripts to get the HTML rendering of a character string.
+First of all, you need to include in the <strong>head</strong> section of the HTML document the following lines:</p>
+<pre><code class="html">&lt;head&gt;
+    &lt;link rel="stylesheet" href="/w3.css"&gt;
+    &lt;link rel="stylesheet" href="/hcode.css"&gt;
+    &lt;script src="/hcode.js"&gt;&lt;/script&gt;
+    &lt;script&gt;hljs.initHighlightingOnLoad();&lt;/script&gt;
+&lt;/head&gt;</code></pre>
+<p>Then, just use the script as follows:</p>
+<pre><code class="php">require_once "md.php";
+$Markdown = new Markdown();
+$htmlMarkDown = $Markdown-&gt;text("Hello, this is a **MarkDown** string.");
+echo($htmlMarkDown);</code></pre>
+<h2>References</h2>
+<p>This script is based on the following scripts:</p>
+<ul>
+<li><a href="https://parsedown.org/">MarkDown Parser in PHP</a></li>
+<li><a href="https://www.w3schools.com/w3css/default.asp">W3Shcool CSS Framework</a></li>
+<li><a href="https://highlightjs.org/">highlight.js</a></li>
+</ul>
+<p>Check these sites for more information on how <strong>md.php</strong> works.</p></div></body></html>
